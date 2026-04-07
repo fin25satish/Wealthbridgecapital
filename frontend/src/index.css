@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    @apply bg-[#0f172a] text-slate-100 font-sans;
+    scrollbar-width: thin;
+    scrollbar-color: #334155 #1e293b;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-surface-card;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-border rounded-full;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface-card border border-surface-border rounded-xl p-4;
+  }
+  .btn-primary {
+    @apply bg-brand-600 hover:bg-brand-700 text-white font-semibold px-4 py-2 rounded-lg transition-colors;
+  }
+  .btn-ghost {
+    @apply text-slate-400 hover:text-white hover:bg-surface-hover px-3 py-2 rounded-lg transition-colors;
+  }
+  .input {
+    @apply bg-surface-card border border-surface-border rounded-lg px-3 py-2 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent;
+  }
+  .badge-up {
+    @apply text-success text-sm font-semibold;
+  }
+  .badge-down {
+    @apply text-danger text-sm font-semibold;
+  }
+  .sidebar-link {
+    @apply flex items-center gap-3 px-3 py-2 rounded-lg text-slate-400 hover:text-white hover:bg-surface-hover transition-colors cursor-pointer;
+  }
+  .sidebar-link.active {
+    background-color: rgb(37 99 235 / 0.2);
+    color: #60a5fa;
+    border: 1px solid rgb(37 99 235 / 0.3);
+  }
+}
